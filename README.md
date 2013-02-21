@@ -3,7 +3,7 @@ html5trans
 
 Software pro zobrazení transformovaných skenů map v prohlížeči pomocí HTML5
 
-Demo: http://hermes.mzk.cz/map-transformation/
+Demo: http://moravianlibrary.github.com/html5trans/
 
 This software was supported by the Programme of Applied Research and Development of the
 National and Cultural Identity (NAKI) from the Ministry of Culture of the Czech Republic,

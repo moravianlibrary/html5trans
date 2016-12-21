@@ -79,11 +79,12 @@ mzk.html5trans.TransformationDemo = function(map, image, bbox,
    */
   this.newMapMarkers_ = [];
 
-  var icon = new google.maps.MarkerImage(
-      mzk.html5trans.TransformationDemo.PNG_MARKER,
-      new google.maps.Size(12, 12),
-      new google.maps.Point(0, 0),
-      new google.maps.Point(6, 6));
+  var icon = {
+      url: mzk.html5trans.TransformationDemo.PNG_MARKER,
+      size: new google.maps.Size(12, 12),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(6, 6)
+  }
 
   goog.array.forEach(points, function(el, i, arr) {
     var meters = mzk.html5trans.math.geo.LatLngToMeters(el[0], el[1]);

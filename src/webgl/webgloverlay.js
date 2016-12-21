@@ -208,7 +208,7 @@ mzk.html5trans.webgl.WebGLOverlay.prototype['onAdd'] = function() {
   var redrawHandler = goog.bind(function() {
     if (this.zooming_) return;
     var off = goog.style.getRelativePosition(this.canvas_,
-                                             map.getDiv());
+                                             /** @type {Element} */ (map.getDiv()));
     if (Math.max(Math.abs(off.x + this.canvasPadding_),
                  Math.abs(off.y + this.canvasPadding_)) > this.canvasPadding_) {
       this.updateLayers();
@@ -221,7 +221,7 @@ mzk.html5trans.webgl.WebGLOverlay.prototype['onAdd'] = function() {
   google.maps.event.addListener(map, 'zoom_changed', goog.bind(function() {
     //window['console']['log']('zoom_changed');
     this.zooming_ = true;
-    goog.style.showElement(this.canvas_, false);
+    goog.style.setElementShown(this.canvas_, false);
     setTimeout(goog.bind(function() {
       this.zooming_ = false;
       this.updateLayers();
@@ -257,7 +257,7 @@ mzk.html5trans.webgl.WebGLOverlay.prototype.updateLayers = function() {
   goog.style.setPosition(this.canvas_,
                          offOver.x - this.canvasPadding_,
                          offOver.y - this.canvasPadding_);
-  goog.style.showElement(this.canvas_, true);
+  goog.style.setElementShown(this.canvas_, true);
 
   var bnds = map.getBounds();
   if (bnds) {
